@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vulnx - Advanced Vulnerability Scanner</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="container">
+            <div class="logo">
+                <a href="#" aria-label="Vulnx homepage">
+                    <img src="static/logo.svg" alt="Vulnx Logo" width="120" height="40" loading="eager">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="main-menu" role="menu">
+                <li role="none" class="active"><a href="#overview" role="menuitem">Overview</a></li>
+                <li role="none"><a href="#features" role="menuitem">Features</a></li>
+                <li role="none"><a href="#workflows" role="menuitem">Workflows</a></li>
+                <li role="none"><a href="#installation" role="menuitem">Installation</a></li>
+                <li role="none"><a href="#usage" role="menuitem">Usage</a></li>
+                <li role="none">
+                    <a href="https://github.com/whoamikiddie/vulnx-base" class="github-link" role="menuitem" aria-label="GitHub repository">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="mobile-menu-overlay" aria-hidden="true"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Vulnx</h1>
+                <p class="subtitle">Next-Generation Security Scanning Platform</p>
+                <div class="cta-buttons">
+                    <a href="#installation" class="btn btn-primary">Get Started</a>
+                    <a href="#documentation" class="btn btn-secondary">Documentation</a>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="static/hero-illustration.svg" alt="Security scanning illustration" width="600" height="400" loading="eager">
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Scanning Modules</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">90%</span>
+                    <span class="stat-label">Detection Rate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4x</span>
+                    <span class="stat-label">Performance Boost</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2>Overview</h2>
+            <div class="section-intro">
+                <p>Vulnx is a next-generation security scanning platform that combines advanced reconnaissance techniques with powerful vulnerability assessment capabilities. Built with performance and extensibility in mind, it enables security professionals to conduct thorough security assessments efficiently.</p>
+            </div>
+            <div class="overview-content">
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <i class="fas fa-bolt"></i>
+                        <h3>High Performance</h3>
+                        <p>Parallel scanning with configurable thread management for maximum efficiency and speed.</p>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Comprehensive</h3>
+                        <p>Advanced security assessment with detailed vulnerability detection and reporting.</p>
+                    </div>
+                    <div class="overview-card">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <h3>Modular</h3>
+                        <p>Extensible architecture that allows for custom plugins and specialized workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section section-alt">
+        <div class="container">
+            <h2>Core Architecture</h2>
+            <div class="architecture-grid">
+                <div class="architecture-diagram">
+                    <div class="diagram-component component-workflow">
+                        <svg class="component-icon" viewBox="0 0 24 24" width="36" height="36">
+                            <path fill="#9D3FDD" d="M14,13H10V11H14V13M14,9H10V7H14V9M22,8V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4H10L12,6H20A2,2 0 0,1 22,8M20,8H4V18H20V8Z" />
+                        </svg>
+                        <h4>Workflow Manager</h4>
+                    </div>
+                    <div class="diagram-component component-modules">
+                        <svg class="component-icon" viewBox="0 0 24 24" width="36" height="36">
+                            <path fill="#9D3FDD" d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z" />
+                        </svg>
+                        <h4>Module System</h4>
+                    </div>
+                    <div class="diagram-component component-engine">
+                        <svg class="component-icon" viewBox="0 0 24 24" width="40" height="40">
+                            <path fill="#9D3FDD" d="M15.9,18.45C17.25,18.45 18.35,17.35 18.35,16C18.35,14.65 17.25,13.55 15.9,13.55C14.55,13.55 13.45,14.65 13.45,16C13.45,17.35 14.55,18.45 15.9,18.45M21.1,16.68L22.58,17.84C22.71,17.95 22.75,18.13 22.66,18.29L21.26,20.71C21.17,20.86 21,20.92 20.83,20.86L19.09,20.16C18.73,20.44 18.33,20.67 17.91,20.85L17.64,22.7C17.62,22.87 17.47,23 17.3,23H14.5C14.32,23 14.18,22.87 14.15,22.7L13.89,20.85C13.46,20.67 13.07,20.44 12.71,20.16L10.96,20.86C10.81,20.92 10.62,20.86 10.54,20.71L9.14,18.29C9.05,18.13 9.09,17.95 9.22,17.84L10.7,16.68L10.65,16L10.7,15.31L9.22,14.16C9.09,14.05 9.05,13.86 9.14,13.71L10.54,11.29C10.62,11.13 10.81,11.07 10.96,11.13L12.71,11.84C13.07,11.56 13.46,11.32 13.89,11.15L14.15,9.29C14.18,9.13 14.32,9 14.5,9H17.3C17.47,9 17.62,9.13 17.64,9.29L17.91,11.15C18.33,11.32 18.73,11.56 19.09,11.84L20.83,11.13C21,11.07 21.17,11.13 21.26,11.29L22.66,13.71C22.75,13.86 22.71,14.05 22.58,14.16L21.1,15.31L21.15,16L21.1,16.68M6.69,8.07C7.56,8.07 8.26,7.37 8.26,6.5C8.26,5.63 7.56,4.92 6.69,4.92C5.82,4.92 5.11,5.63 5.11,6.5C5.11,7.37 5.82,8.07 6.69,8.07M8.07,9.54L9.04,10.87C9.13,11 9.09,11.17 8.96,11.22L7.84,11.71C8.03,12.07 8.18,12.45 8.27,12.85L9.44,13.26C9.59,13.31 9.69,13.45 9.69,13.61V15.31C9.69,15.5 9.59,15.64 9.44,15.69L8.27,16.11C8.18,16.5 8.03,16.88 7.84,17.24L8.96,17.74C9.09,17.83 9.13,18 9.04,18.13L7.1,20.64C7.01,20.76 6.84,20.8 6.71,20.7L5.59,20.22C5.23,20.42 4.84,20.56 4.5,20.65L4.1,21.89C4.05,22.03 3.91,22.11 3.75,22.1H1.27C1.09,22.11 0.95,22.03 0.9,21.89L0.5,20.65C0.16,20.56 -0.23,20.42 -0.59,20.22L-1.71,20.71C-1.84,20.8 -2.01,20.76 -2.1,20.64L-4.04,18.13C-4.13,18 -4.09,17.83 -3.96,17.74L-2.84,17.24C-3.03,16.88 -3.18,16.5 -3.27,16.11L-4.44,15.69C-4.59,15.64 -4.69,15.5 -4.69,15.31V13.61C-4.69,13.45 -4.59,13.31 -4.44,13.26L-3.27,12.85C-3.18,12.45 -3.03,12.07 -2.84,11.71L-3.96,11.22C-4.09,11.12 -4.13,10.95 -4.04,10.87L-2.1,8.36C-2.01,8.23 -1.84,8.2 -1.71,8.29L-0.59,8.78C-0.23,8.58 0.16,8.44 0.5,8.35L0.9,7.1C0.95,6.97 1.09,6.88 1.27,6.89H3.75C3.91,6.88 4.05,6.97 4.1,7.1L4.5,8.35C4.84,8.44 5.23,8.58 5.59,8.78L6.71,8.29C6.84,8.2 7.01,8.23 7.1,8.36L8.07,9.54Z" />
+                        </svg>
+                        <h4>Scanning Engine</h4>
+                    </div>
+                    <div class="diagram-component component-reporting">
+                        <svg class="component-icon" viewBox="0 0 24 24" width="36" height="36">
+                            <path fill="#9D3FDD" d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M10,13H8V11H10V13M10,17H8V15H10V17M16,13H12V11H16V13M16,17H12V15H16V17Z" />
+                        </svg>
+                        <h4>Reporting Engine</h4>
+                    </div>
+                    <div class="diagram-component component-config">
+                        <svg class="component-icon" viewBox="0 0 24 24" width="36" height="36">
+                            <path fill="#9D3FDD" d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+                        </svg>
+                        <h4>Configuration</h4>
+                    </div>
+                </div>
+                <div class="architecture-text">
+                    <p>Vulnx's modular architecture allows for efficient, parallel processing of security scanning tasks. The core components work together to provide a comprehensive security assessment platform:</p>
+                    <ul class="feature-list">
+                        <li><strong>Scanning Engine:</strong> The central component that coordinates all scanning operations. It manages parallel execution threads and optimizes resource allocation for maximum performance.</li>
+                        <li><strong>Workflow Manager:</strong> Defines and orchestrates scanning processes based on predefined or custom workflows. It determines the sequence and dependencies between scanning tasks.</li>
+                        <li><strong>Module System:</strong> Provides a plugin architecture for extending functionality. Custom scanning modules can be developed and integrated seamlessly with the core system.</li>
+                        <li><strong>Reporting Engine:</strong> Collects and processes scan results, generating comprehensive security reports in multiple formats with detailed vulnerability findings.</li>
+                        <li><strong>Configuration Manager:</strong> Handles tool settings, scan profiles, and user preferences. Enables fine-tuning of the scanning parameters for different target environments.</li>
+                    </ul>
+                    <p class="architecture-note">All components communicate through standardized APIs, allowing for seamless integration and extensibility. The modular design ensures that new features can be added without disrupting the core functionality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="scanning">Scanning</button>
+                    <button class="tab-btn" data-tab="intelligence">Intelligence</button>
+                    <button class="tab-btn" data-tab="integration">Integration</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="scanning">
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔍</div>
+                                <h3>Parallel Processing</h3>
+                                <p>Run scans concurrently with configurable thread management for maximum efficiency</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🌐</div>
+                                <h3>Multiple Workflows</h3>
+                                <p>Choose from different workflow types for various scanning scenarios</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🛡️</div>
+                                <h3>Protection Bypass</h3>
+                                <p>Advanced Cloudflare detection and bypass mechanisms</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="intelligence">
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">👁️</div>
+                                <h3>Fingerprinting</h3>
+                                <p>Advanced detection of web technologies and frameworks</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔒</div>
+                                <h3>Misconfiguration Detection</h3>
+                                <p>Identification of common security misconfigurations</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Vulnerability Assessment</h3>
+                                <p>Automated detection and classification of security vulnerabilities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="integration">
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🔄</div>
+                                <h3>API Support</h3>
+                                <p>RESTful API for automation and integration with other tools</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🔔</div>
+                                <h3>Webhooks</h3>
+                                <p>Real-time notifications for events and findings</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📁</div>
+                                <h3>Export Formats</h3>
+                                <p>Generate reports in multiple formats including JSON, CSV, and PDF</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflows Section -->
+    <section id="workflows" class="section section-alt">
+        <div class="container">
+            <h2>Workflow Types</h2>
+            <div class="section-intro">
+                <p>Vulnx supports multiple workflow types, allowing you to choose the most appropriate scanning strategy for your needs.</p>
+            </div>
+            <div class="workflow-grid">
+                <div class="workflow-card">
+                    <div class="workflow-header">
+                        <svg class="workflow-icon" viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#9D3FDD" d="M3,5H9V11H3V5M5,7V9H7V7H5M11,7H21V9H11V7M11,15H21V17H11V15M5,13V15H7V13H5M3,13H9V19H3V13Z" />
+                        </svg>
+                        <h3>General</h3>
+                    </div>
+                    <p>Sequential scanning for standard security assessments</p>
+                    <div class="code-block mini">
+                        <div class="terminal-bar">
+                            <span class="terminal-button"></span>
+                        </div>
+                        <pre><code>vulnx scan -f general -t sample.com</code></pre>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-header">
+                        <svg class="workflow-icon" viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#9D3FDD" d="M3,3H11V7.34L16.66,1.68L22.32,7.34L16.66,13H21V21H13V13H16.66L11,7.34V11H3V3M3,13H11V21H3V13Z" />
+                        </svg>
+                        <h3>Advanced</h3>
+                    </div>
+                    <p>Parallel scanning with comprehensive vulnerability checks</p>
+                    <div class="code-block mini">
+                        <div class="terminal-bar">
+                            <span class="terminal-button"></span>
+                        </div>
+                        <pre><code>vulnx scan -f advance -t sample.com</code></pre>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-header">
+                        <svg class="workflow-icon" viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#9D3FDD" d="M20,6H12L10,4H4A2,2 0 0,0 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8A2,2 0 0,0 20,6M20,18H4V8H20V18Z" />
+                        </svg>
+                        <h3>Archive</h3>
+                    </div>
+                    <p>Scan archived content for historical vulnerabilities</p>
+                    <div class="code-block mini">
+                        <div class="terminal-bar">
+                            <span class="terminal-button"></span>
+                        </div>
+                        <pre><code>vulnx scan -f archive -t example.com</code></pre>
+                    </div>
+                </div>
+                <div class="workflow-card">
+                    <div class="workflow-header">
+                        <svg class="workflow-icon" viewBox="0 0 24 24" width="28" height="28">
+                            <path fill="#9D3FDD" d="M10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6H12L10,4Z" />
+                        </svg>
+                        <h3>Dirbscan</h3>
+                    </div>
+                    <p>Directory enumeration and sensitive file discovery</p>
+                    <div class="code-block mini">
+                        <div class="terminal-bar">
+                            <span class="terminal-button"></span>
+                        </div>
+                        <pre><code>vulnx scan -f dirbscan -t target.com</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="section">
+        <div class="container">
+            <h2>Installation</h2>
+            <div class="section-intro">
+                <p>Get started with Vulnx in just a few simple steps. Follow the installation instructions below to set up Vulnx on your system.</p>
+            </div>
+            <div class="installation-content">
+                <div class="installation-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Clone the Repository</h3>
+                            <div class="code-block">
+                                <div class="terminal-bar">
+                                    <span class="terminal-button"></span>
+                                </div>
+                                <pre><code>git clone https://github.com/whoamikiddie/vulnx-base.git</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Navigate to Directory</h3>
+                            <div class="code-block">
+                                <div class="terminal-bar">
+                                    <span class="terminal-button"></span>
+                                </div>
+                                <pre><code>cd vulnx-base</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Install System-Wide</h3>
+                            <div class="code-block">
+                                <div class="terminal-bar">
+                                    <span class="terminal-button"></span>
+                                </div>
+                                <pre><code>sudo mv vulnx /usr/bin</code></pre>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="system-requirements">
+                    <h3>System Requirements</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Linux-based operating system</li>
+                        <li><i class="fas fa-check"></i> Git</li>
+                        <li><i class="fas fa-check"></i> 2GB RAM minimum</li>
+                        <li><i class="fas fa-check"></i> Internet connection</li>
+                    </ul>
+                    <div class="support-note">
+                        <p>For additional help, check out the <a href="https://github.com/whoamikiddie/vulnx-base" target="_blank">documentation</a> or open an issue on GitHub.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Section -->
+    <section id="usage" class="section section-alt">
+        <div class="container">
+            <h2>Usage Examples</h2>
+            <div class="section-intro">
+                <p>Vulnx provides a powerful command-line interface with multiple options for different scanning scenarios. Here are some common usage examples:</p>
+            </div>
+            <div class="usage-tabs">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="basic">Basic</button>
+                    <button class="tab-btn" data-tab="advanced">Advanced</button>
+                    <button class="tab-btn" data-tab="cloud">Cloud</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="basic">
+                        <div class="code-block">
+                            <pre><code># Basic scanning with a workflow
+vulnx scan -f [flowName] -t [target]
+
+# Scanning with a custom module
+vulnx scan -m [modulePath] -T [targetsFile]
+
+# Scanning with custom flow file
+vulnx scan -f /path/to/flow.yaml -t [target]
+
+# Network scanning
+vulnx scan --threads-hold=30 -f cidr -t 1.2.3.4/24</code></pre>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="advanced">
+                        <div class="code-block">
+                            <pre><code># Scan with custom workspace
+vulnx scan -T list_of_targets.txt -W custom_workspaces
+
+# Debug mode scanning
+vulnx scan -t target.com -w workspace_name --debug
+
+# Aggressive tactic scanning
+vulnx scan --tactic aggressive -f general -t sample.com
+
+# Multiple target scanning
+vulnx scan -f extensive -t sample.com -t another.com</code></pre>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="cloud">
+                        <div class="code-block">
+                            <pre><code># Cloud-based scanning
+vulnx cloud -f [flowName] -t [target]
+
+# Cloud module scanning
+vulnx cloud -m [modulePath] -t [target]
+
+# Multiple concurrent cloud scans
+vulnx cloud -c 5 -f [flowName] -T [targetsFile]
+
+# Cloud scanning with API token
+vulnx cloud --token xxx -c 5 -f [flowName] -T [targetsFile]</code></pre>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to enhance your security?</h2>
+                <p>Start using Vulnx today and take your security assessments to the next level.</p>
+                <div class="cta-buttons">
+                    <a href="#installation" class="btn btn-primary">GET STARTED</a>
+                    <a href="https://github.com/whoamikiddie/vulnx-base" class="btn btn-secondary">VIEW ON GITHUB</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container footer-container">
+                <div class="footer-branding">
+                    <h3>Vulnx</h3>
+                    <p>Advanced Vulnerability Scanner</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#workflows">Workflows</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#usage">Usage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-connect">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/whoamikiddie/vulnx-base" target="_blank" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="github-icon">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Vulnx. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enhanced mobile menu functionality
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileMenu = document.querySelector('.nav-links');
+            const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const body = document.body;
+            let isMenuOpen = false;
+
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            
+            // Activate nav links based on current section with smoother transitions
+            function setActiveNavLink() {
+                const sections = document.querySelectorAll('section, header.hero');
+                const navLinks = document.querySelectorAll('.nav-links li');
+                
+                let currentSection = '';
+                let maxVisibleArea = 0;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    const scrollPosition = window.scrollY;
+                    
+                    // Calculate how much of the section is visible
+                    const visiblePx = Math.min(
+                        sectionTop + sectionHeight - scrollPosition,
+                        window.innerHeight,
+                        sectionHeight
+                    ) - Math.max(0, sectionTop - scrollPosition);
+                    
+                    // Keep track of the section with the most visible area
+                    if (visiblePx > maxVisibleArea) {
+                        maxVisibleArea = visiblePx;
+                        currentSection = section.getAttribute('id') || (section.classList.contains('hero') ? 'hero' : '');
+                    }
+                });
+                
+                navLinks.forEach(li => {
+                    li.classList.remove('active');
+                    const link = li.querySelector('a');
+                    if (link) {
+                        const linkTarget = link.getAttribute('href').substring(1);
+                        
+                        // Special case for hero section
+                        if ((currentSection === 'hero' && linkTarget === 'overview') || 
+                            (linkTarget === currentSection)) {
+                            li.classList.add('active');
+                            menuBtn.setAttribute('aria-current', linkTarget);
+                        }
+                    }
+                });
+            }
+            
+            // Enhanced mobile menu toggle with better accessibility
+            function toggleMenu() {
+                isMenuOpen = !isMenuOpen;
+                mobileMenu.classList.toggle('active', isMenuOpen);
+                mobileOverlay.classList.toggle('active', isMenuOpen);
+                menuBtn.classList.toggle('active', isMenuOpen);
+                
+                // Prevent body scrolling when menu is open
+                body.style.overflow = isMenuOpen ? 'hidden' : '';
+                
+                // Update ARIA attributes
+                menuBtn.setAttribute('aria-expanded', isMenuOpen ? 'true' : 'false');
+                
+                // Change icon
+                const icon = menuBtn.querySelector('i');
+                icon.className = isMenuOpen ? 'fas fa-times' : 'fas fa-bars';
+                
+                // Announce for screen readers
+                const announcement = isMenuOpen ? 'Menu opened' : 'Menu closed';
+                announceToScreenReader(announcement);
+            }
+            
+            // Helper function for screen reader announcements
+            function announceToScreenReader(message) {
+                const announcement = document.createElement('div');
+                announcement.setAttribute('aria-live', 'polite');
+                announcement.setAttribute('aria-atomic', 'true');
+                announcement.classList.add('sr-only');
+                announcement.textContent = message;
+                document.body.appendChild(announcement);
+                setTimeout(() => {
+                    document.body.removeChild(announcement);
+                }, 1000);
+            }
+
+            // Optimized scroll handler with requestAnimationFrame
+            let lastScrollPosition = 0;
+            let ticking = false;
+            
+            function handleScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const navbar = document.querySelector('.navbar');
+                        const currentPosition = window.scrollY;
+                        
+                        // Handle navbar styling
+                        if (currentPosition > 50) {
+                            navbar.classList.add('scrolled');
+                        } else {
+                            navbar.classList.remove('scrolled');
+                        }
+                        
+                        // Handle back to top button visibility
+                        if (backToTop) {
+                            if (currentPosition > 300) {
+                                backToTop.classList.add('visible');
+                            } else {
+                                backToTop.classList.remove('visible');
+                            }
+                        }
+                        
+                        // Update active nav link
+                        setActiveNavLink();
+                        
+                        lastScrollPosition = currentPosition;
+                        ticking = false;
+                    });
+                    
+                    ticking = true;
+                }
+            }
+            
+            // Back to top button click handler
+            if (backToTop) {
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }, { passive: true });
+            }
+
+            // Throttle tab switching for better performance
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach((button) => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Deactivate all tabs
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+                    
+                    // Activate current tab
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                }, { passive: true });
+            });
+
+            // Add event listeners with passive option for better scrolling performance
+            menuBtn.addEventListener('click', toggleMenu);
+            mobileOverlay.addEventListener('click', toggleMenu);
+            window.addEventListener('scroll', handleScroll, { passive: true });
+
+            // Close menu when clicking a navigation link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const target = this.getAttribute('href');
+                    
+                    // Close mobile menu when nav link is clicked
+                    if (isMenuOpen) {
+                        toggleMenu();
+                    }
+                    
+                    // Handle smooth scrolling to sections
+                    if (target && target.startsWith('#')) {
+                        const targetElement = document.querySelector(target);
+                        if (targetElement) {
+                            e.preventDefault();
+                            const yOffset = -70; // Adjust scroll offset
+                            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                            
+                            window.scrollTo({
+                                top: y,
+                                behavior: 'smooth'
+                            });
+                            
+                            history.pushState(null, null, target);
+                        }
+                    }
+                });
+            });
+            
+            // Handle keyboard navigation
+            mobileMenu.addEventListener('keydown', function(e) {
+                // Close menu with Escape key
+                if (e.key === 'Escape' && isMenuOpen) {
+                    toggleMenu();
+                }
+            });
+            
+            // Add CSS for screen reader only elements
+            const style = document.createElement('style');
+            style.textContent = '.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }';
+            document.head.appendChild(style);
+
+            // Copy code blocks
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const codeBlock = this.previousElementSibling;
+                    const code = codeBlock.textContent;
+                    
+                    navigator.clipboard.writeText(code).then(() => {
+                        this.textContent = 'Copied!';
+                        setTimeout(() => {
+                            this.textContent = 'Copy';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Could not copy text: ', err);
+                    });
+                }, { passive: true });
+            });
+
+            // Set first tab as active by default
+            if (tabButtons.length > 0) {
+                tabButtons[0].classList.add('active');
+                document.querySelector('.tab-pane').classList.add('active');
+            }
+            
+            // Initial call to set active nav link on page load
+            setActiveNavLink();
+        });
+    </script>
+</body>
+</html> 
