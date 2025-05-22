@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <!-- Definitions for gradients and filters -->
+  <defs>
+    <!-- Gradient for nodes -->
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c084fc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7e22ce;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- Arrow marker for paths -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8b5cf6" />
+    </marker>
+  </defs>
+  
+  <!-- Dark background with grid -->
+  <rect width="100%" height="100%" fill="#1a1a2e" />
+  <g stroke="#2a2a4a" stroke-width="0.5">
+    <line x1="0" y1="0" x2="800" y2="0" />
+    <line x1="0" y1="75" x2="800" y2="75" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="225" x2="800" y2="225" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    
+    <line x1="0" y1="0" x2="0" y2="300" />
+    <line x1="160" y1="0" x2="160" y2="300" />
+    <line x1="320" y1="0" x2="320" y2="300" />
+    <line x1="480" y1="0" x2="480" y2="300" />
+    <line x1="640" y1="0" x2="640" y2="300" />
+    <line x1="800" y1="0" x2="800" y2="300" />
+  </g>
+  
+  <!-- Connection paths -->
+  <g id="connections">
+    <!-- Input to CMS Detection -->
+    <path d="M 120 150 C 170 150, 170 100, 220 100" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="input" data-to="cms" />
+          
+    <!-- Input to Scanner -->
+    <path d="M 120 150 C 170 150, 170 150, 220 150" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="input" data-to="scanner" />
+          
+    <!-- Input to Exploits -->
+    <path d="M 120 150 C 170 150, 170 200, 220 200" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="input" data-to="exploit" />
+          
+    <!-- CMS to Analysis -->
+    <path d="M 320 100 C 370 100, 370 150, 420 150" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="cms" data-to="analysis" />
+          
+    <!-- Scanner to Analysis -->
+    <path d="M 320 150 C 370 150, 370 150, 420 150" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="scanner" data-to="analysis" />
+          
+    <!-- Exploits to Analysis -->
+    <path d="M 320 200 C 370 200, 370 150, 420 150" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="exploit" data-to="analysis" />
+          
+    <!-- Analysis to Reporting -->
+    <path d="M 520 150 C 570 150, 570 150, 620 150" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="analysis" data-to="reporting" />
+          
+    <!-- Reporting to Output -->
+    <path d="M 720 150 C 750 150, 750 150, 780 150" stroke="#8b5cf6" stroke-width="2" fill="none" 
+          marker-end="url(#arrowhead)" data-from="reporting" data-to="output" />
+  </g>
+  
+  <!-- Workflow nodes -->
+  <g id="nodes">
+    <!-- Input Node -->
+    <g id="input" class="node component">
+      <circle cx="70" cy="150" r="50" fill="url(#purpleGradient)" filter="url(#glow)" />
+      <text x="70" y="145" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Target</text>
+      <text x="70" y="165" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Input</text>
+    </g>
+    
+    <!-- CMS Detection Node -->
+    <g id="cms" class="node component">
+      <rect x="220" y="70" width="100" height="60" rx="10" ry="10" fill="url(#purpleGradient)" filter="url(#glow)" />
+      <text x="270" y="105" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">CMS Detection</text>
+    </g>
+    
+    <!-- Scanner Node -->
+    <g id="scanner" class="node component">
+      <rect x="220" y="120" width="100" height="60" rx="10" ry="10" fill="url(#purpleGradient)" filter="url(#glow)" />
+      <text x="270" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Scanner</text>
+    </g>
+    
+    <!-- Exploit Node -->
+    <g id="exploit" class="node component">
+      <rect x="220" y="170" width="100" height="60" rx="10" ry="10" fill="url(#purpleGradient)" filter="url(#glow)" />
+      <text x="270" y="205" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Exploits</text>
+    </g>
+    
+    <!-- Analysis Node -->
+    <g id="analysis" class="node component">
+      <circle cx="470" cy="150" r="50" fill="url(#purpleGradient)" filter="url(#glow)" />
+      <text x="470" y="145" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Analysis</text>
+      <text x="470" y="165" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Engine</text>
+    </g>
+    
+    <!-- Reporting Node -->
+    <g id="reporting" class="node component">
+      <rect x="620" y="120" width="100" height="60" rx="10" ry="10" fill="url(#purpleGradient)" filter="url(#glow)" />
+      <text x="670" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Reporting</text>
+    </g>
+    
+    <!-- Output Node -->
+    <g id="output" class="node component">
+      <polygon points="780,120 780,180 730,180 730,120" fill="url(#purpleGradient)" filter="url(#glow)" />
+      <text x="755" y="155" text-anchor="middle" fill="white" font-family="Arial" font-size="14" font-weight="bold">Output</text>
+    </g>
+  </g>
+  
+  <!-- Status indicators -->
+  <g id="status-indicators">
+    <circle cx="70" cy="100" r="5" fill="#4ade80">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="80" y="105" font-family="Arial" font-size="10" fill="#4ade80">Active</text>
+    
+    <circle cx="270" cy="70" r="5" fill="#facc15">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="280" y="75" font-family="Arial" font-size="10" fill="#facc15">Processing</text>
+    
+    <circle cx="670" cy="120" r="5" fill="#f87171">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="680" y="125" font-family="Arial" font-size="10" fill="#f87171">Alert</text>
+  </g>
+  
+  <!-- Data pulse animations on paths -->
+  <g id="data-pulse">
+    <circle id="pulse1" cx="0" cy="0" r="3" fill="#8b5cf6">
+      <animateMotion
+        path="M 120 150 C 170 150, 170 150, 220 150"
+        dur="2s"
+        repeatCount="indefinite"
+      />
+    </circle>
+    
+    <circle id="pulse2" cx="0" cy="0" r="3" fill="#8b5cf6">
+      <animateMotion
+        path="M 520 150 C 570 150, 570 150, 620 150"
+        dur="3s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </g>
+</svg> 

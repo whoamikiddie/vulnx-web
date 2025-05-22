@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#8b5cf6" stroke-width="0.5" stroke-opacity="0.1"/>
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- Central Scanner Node -->
+  <circle cx="250" cy="150" r="25" fill="#1a0b2e" stroke="#8b5cf6" stroke-width="2">
+    <animate attributeName="r" values="20;25;20" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="250" cy="150" r="10" fill="#8b5cf6">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Pulse Waves -->
+  <circle cx="250" cy="150" r="30" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.8">
+    <animate attributeName="r" from="30" to="100" dur="4s" begin="0s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="0.8" to="0" dur="4s" begin="0s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="250" cy="150" r="30" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.8">
+    <animate attributeName="r" from="30" to="100" dur="4s" begin="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="0.8" to="0" dur="4s" begin="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Target Nodes -->
+  <!-- Node 1 -->
+  <circle cx="100" cy="80" r="15" fill="#1a0b2e" stroke="#8b5cf6" stroke-width="2" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="1s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Node 2 -->
+  <circle cx="150" cy="220" r="15" fill="#1a0b2e" stroke="#8b5cf6" stroke-width="2" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Node 3 -->
+  <circle cx="350" cy="80" r="15" fill="#1a0b2e" stroke="#8b5cf6" stroke-width="2" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="1.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Node 4 -->
+  <circle cx="400" cy="220" r="15" fill="#1a0b2e" stroke="#8b5cf6" stroke-width="2" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="2.5s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Connection Lines -->
+  <!-- Line 1 -->
+  <line x1="250" y1="150" x2="100" y2="80" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="3s" repeatCount="indefinite" />
+    <animate id="line1pulse" attributeName="opacity" values="0.2;0.8;0.2" dur="3s" begin="1s" repeatCount="indefinite" />
+  </line>
+  
+  <!-- Line 2 -->
+  <line x1="250" y1="150" x2="150" y2="220" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="3s" repeatCount="indefinite" />
+    <animate id="line2pulse" attributeName="opacity" values="0.2;0.8;0.2" dur="3s" begin="2s" repeatCount="indefinite" />
+  </line>
+  
+  <!-- Line 3 -->
+  <line x1="250" y1="150" x2="350" y2="80" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="3s" repeatCount="indefinite" />
+    <animate id="line3pulse" attributeName="opacity" values="0.2;0.8;0.2" dur="3s" begin="1.5s" repeatCount="indefinite" />
+  </line>
+  
+  <!-- Line 4 -->
+  <line x1="250" y1="150" x2="400" y2="220" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5" opacity="0.6">
+    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="3s" repeatCount="indefinite" />
+    <animate id="line4pulse" attributeName="opacity" values="0.2;0.8;0.2" dur="3s" begin="2.5s" repeatCount="indefinite" />
+  </line>
+
+  <!-- Data Packets -->
+  <!-- Packet 1 -->
+  <circle class="data-packet" cx="250" cy="150" r="5" fill="#ef4444">
+    <animate attributeName="cx" values="250;100" dur="2s" begin="1s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="150;80" dur="2s" begin="1s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.8;1;0" dur="2s" begin="1s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Packet 2 -->
+  <circle class="data-packet" cx="250" cy="150" r="5" fill="#10b981">
+    <animate attributeName="cx" values="250;150" dur="2s" begin="2s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="150;220" dur="2s" begin="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.8;1;0" dur="2s" begin="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Packet 3 -->
+  <circle class="data-packet" cx="250" cy="150" r="5" fill="#f59e0b">
+    <animate attributeName="cx" values="250;350" dur="2s" begin="1.5s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="150;80" dur="2s" begin="1.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.8;1;0" dur="2s" begin="1.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Packet 4 -->
+  <circle class="data-packet" cx="250" cy="150" r="5" fill="#06b6d4">
+    <animate attributeName="cx" values="250;400" dur="2s" begin="2.5s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="150;220" dur="2s" begin="2.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0.8;1;0" dur="2s" begin="2.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Return Packets -->
+  <!-- Return Packet 1 -->
+  <circle class="data-packet" cx="100" cy="80" r="4" fill="#ef4444">
+    <animate attributeName="cx" values="100;250" dur="2s" begin="3s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="80;150" dur="2s" begin="3s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;1;0.8;0" dur="2s" begin="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Return Packet 2 -->
+  <circle class="data-packet" cx="150" cy="220" r="4" fill="#10b981">
+    <animate attributeName="cx" values="150;250" dur="2s" begin="4s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="220;150" dur="2s" begin="4s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;1;0.8;0" dur="2s" begin="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Return Packet 3 -->
+  <circle class="data-packet" cx="350" cy="80" r="4" fill="#f59e0b">
+    <animate attributeName="cx" values="350;250" dur="2s" begin="3.5s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="80;150" dur="2s" begin="3.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;1;0.8;0" dur="2s" begin="3.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Return Packet 4 -->
+  <circle class="data-packet" cx="400" cy="220" r="4" fill="#06b6d4">
+    <animate attributeName="cx" values="400;250" dur="2s" begin="4.5s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="220;150" dur="2s" begin="4.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;1;0.8;0" dur="2s" begin="4.5s" repeatCount="indefinite" />
+  </circle>
+</svg> 

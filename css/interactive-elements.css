@@ -1,0 +1,282 @@
+/* Interactive Elements Styling */
+
+/* SVG Animation Enhancements */
+.workflow-animation {
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+  transition: all 0.3s ease;
+}
+
+.workflow-animation:hover {
+  filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.5));
+}
+
+/* Workflow Cards Enhancement */
+.workflow-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.workflow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+.workflow-card:hover::before {
+  transform: translateX(0);
+}
+
+.workflow-card:hover .workflow-icon {
+  transform: scale(1.2);
+  color: rgba(139, 92, 246, 1);
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.workflow-card .workflow-icon {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.workflow-card .workflow-title {
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.workflow-card:hover .workflow-title {
+  color: rgba(139, 92, 246, 1);
+}
+
+/* Code Block Enhancements */
+.code-block {
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.code-block::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.7), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.code-block:hover::after {
+  transform: scaleX(1);
+}
+
+.code-block:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.code-header .copy-btn {
+  transition: all 0.3s ease;
+}
+
+.code-header .copy-btn:hover {
+  transform: scale(1.2);
+  color: rgba(139, 92, 246, 1);
+}
+
+/* Terminal Animation Enhancements */
+.terminal-window {
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-window::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(139, 92, 246, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.terminal-window:hover::before {
+  opacity: 1;
+}
+
+.terminal-content .line {
+  position: relative;
+}
+
+.terminal-content .line.command::before {
+  content: '$ ';
+  color: #8b5cf6;
+}
+
+.terminal-content .line.success {
+  color: #10b981;
+}
+
+.terminal-content .line.warning {
+  color: #f59e0b;
+}
+
+.terminal-content .line.error {
+  color: #ef4444;
+}
+
+/* Interactive Scanner Enhancements */
+.scanner-container {
+  transition: all 0.3s ease;
+}
+
+.scanner-container:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(139, 92, 246, 0.2);
+}
+
+.scanner-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 8px;
+}
+
+.scanner-container:hover::after {
+  opacity: 1;
+}
+
+.target-element.scanning {
+  z-index: 5;
+}
+
+/* Custom cursor for interactive elements */
+.scanner-container, 
+.workflow-card,
+.code-block,
+.copy-btn,
+.terminal-window,
+.workflow-animation {
+  cursor: pointer;
+}
+
+/* Data Flow animations */
+.data-flow {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.data-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #8b5cf6;
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+  opacity: 0.7;
+  animation: flowParticle 3s linear infinite;
+}
+
+@keyframes flowParticle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.8);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(100px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(200px) scale(0.8);
+  }
+}
+
+/* Pulsing animation for architecture components */
+.arch-component {
+  transition: all 0.3s ease;
+}
+
+.arch-component:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design adjustments for small screens */
+@media (max-width: 768px) {
+  .workflow-animation, 
+  .scanner-container {
+    max-height: 250px;
+  }
+}
+
+/* Workflow Animation Container Fixes */
+.workflow-vis-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(26, 11, 46, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(139, 92, 246, 0.1);
+  padding: 20px;
+}
+
+.workflow-animation-wrapper {
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.workflow-animation {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.workflow-info-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  min-width: 300px;
+  max-width: 80%;
+  z-index: 100;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+/* Highlight active workflow cards */
+.workflow-card.active-workflow {
+  border-color: rgba(139, 92, 246, 1);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Highlight code block */
+.code-block.highlight-code {
+  border-color: rgba(139, 92, 246, 1);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+} 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Hexagon -->
+  <polygon class="hexagon" points="60,10 110,40 110,80 60,110 10,80 10,40" />
+  
+  <!-- Inner Hexagon -->
+  <polygon class="hexagon-inner" points="60,30 90,45 90,75 60,90 30,75 30,45" />
+  
+  <!-- Center Circle -->
+  <circle class="hexagon-center" cx="60" cy="60" r="15" />
+  
+  <!-- Scan Lines -->
+  <line class="scan-line" x1="35" y1="60" x2="85" y2="60" />
+  <line class="scan-line" x1="45" y1="50" x2="75" y2="50" style="animation-delay: 0.2s" />
+  <line class="scan-line" x1="45" y1="70" x2="75" y2="70" style="animation-delay: 0.4s" />
+  
+  <!-- Pulse Effect -->
+  <circle class="pulse" cx="60" cy="60" r="40" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0">
+    <animate attributeName="r" from="20" to="60" dur="1.5s" begin="0s" repeatCount="indefinite" />
+    <animate attributeName="opacity" from="0.6" to="0" dur="1.5s" begin="0s" repeatCount="indefinite" />
+  </circle>
+</svg>

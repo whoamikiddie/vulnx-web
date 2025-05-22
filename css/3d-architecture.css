@@ -1,0 +1,220 @@
+/* 3D Architecture Visualization */
+.architecture-3d-visualization {
+  perspective: 1000px;
+  height: 300px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.arch-3d-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arch-3d-scene {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate-arch 20s infinite linear;
+}
+
+.arch-3d-component {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease-out;
+}
+
+.arch-3d-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.7);
+  border: 2px solid rgba(139, 92, 246, 0.5);
+  border-radius: 10px;
+  background-color: rgba(26, 11, 46, 0.9);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  backface-visibility: visible;
+}
+
+.arch-3d-face::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(139, 92, 246, 0.2), transparent);
+  z-index: -1;
+}
+
+.arch-3d-face::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 40px;
+  background: rgba(139, 92, 246, 0.3);
+  transform: rotate(45deg);
+  animation: shine 5s infinite;
+}
+
+/* Face positioning */
+.arch-3d-face.front {
+  transform: translateZ(100px);
+}
+
+.arch-3d-face.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.arch-3d-face.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.arch-3d-face.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.arch-3d-face.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.arch-3d-face.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* Different component styles */
+.arch-3d-component.scanning-engine {
+  transform: translateZ(0);
+}
+
+.arch-3d-component.workflow {
+  transform: translateZ(0) rotateY(90deg);
+}
+
+.arch-3d-component.modules {
+  transform: translateZ(0) rotateY(180deg);
+}
+
+.arch-3d-component.reporting {
+  transform: translateZ(0) rotateY(270deg);
+}
+
+/* Control buttons */
+.arch-control-btn {
+  background-color: #1a0b2e;
+  color: #8b5cf6;
+  border: 1px solid #8b5cf6;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.arch-control-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.arch-control-btn:hover::before {
+  transform: translateX(0);
+}
+
+.arch-control-btn:hover {
+  color: white;
+  background-color: #2d1b48;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  transform: translateY(-3px);
+}
+
+.arch-control-btn.active {
+  background-color: #8b5cf6;
+  color: white;
+}
+
+/* Animations */
+@keyframes rotate-arch {
+  0% {
+    transform: rotateY(0) rotateX(20deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(20deg);
+  }
+}
+
+@keyframes shine {
+  0% {
+    top: -100%;
+    left: -100%;
+  }
+  20%, 100% {
+    top: 100%;
+    left: 100%;
+  }
+}
+
+/* Pause rotation on hover */
+.arch-3d-scene:hover {
+  animation-play-state: paused;
+}
+
+/* Glow effect on hover */
+.arch-3d-face:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
+  border-color: rgba(139, 92, 246, 0.8);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .architecture-3d-visualization {
+    height: 250px;
+  }
+  
+  .arch-3d-scene {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .arch-3d-face {
+    font-size: 14px;
+  }
+  
+  .arch-3d-face.front,
+  .arch-3d-face.back,
+  .arch-3d-face.right,
+  .arch-3d-face.left,
+  .arch-3d-face.top,
+  .arch-3d-face.bottom {
+    transform: translateZ(75px);
+  }
+  
+  .arch-control-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 0 5px;
+  }
+} 
